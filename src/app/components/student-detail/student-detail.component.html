@@ -1,0 +1,31 @@
+<div class="container" data-aos="fade-down">
+  <mat-card *ngIf="student">
+      <mat-card-title>DETALJI</mat-card-title>
+      <mat-divider></mat-divider>
+      <br>
+      <mat-card-content>
+        <span>JMBAG: </span>{{student.jmbag}}
+        <br>
+        <span>Broj ECTS bodova: </span>{{student.numberOfECTS}} <button *ngIf="!edit" class="btn btn-edit btn-5b icon-edit" (click)="edit=!edit">
+          <span>IZMIJENI</span>
+        </button>
+        <span *ngIf="edit">
+        <input  type="number" #editEcts placeholder="± ects">
+        <button  class="btn btn-confirm btn-5b icon-check" (click)="updateStudentECTS(editEcts.value);editEcts.value=''">
+          <span>POTVRDI</span>
+        </button>
+        <button  class="btn btn-cancel btn-5b icon-abort" (click)="edit=!edit">
+            <span>ODUSTANI</span>
+        </button>
+      </span>
+      <br>
+      <span *ngIf="student.tuitionShouldBePaid"> Student treba platiti školarinu. </span>
+
+  <!--<app-studij [ects]="student.numberOfECTS"></app-studij>-->
+    <br>
+    <br>
+    <button class="btn btn-back btn-5b icon-left"  routerLink="/students">
+      <span>Nazad</span>
+    </button>
+   </mat-card-content>
+  </mat-card>

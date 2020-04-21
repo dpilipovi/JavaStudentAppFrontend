@@ -1,0 +1,295 @@
+.container
+{
+  margin-top:4rem;
+}
+
+span
+{
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.btn
+{
+  border: none;
+	font-family: inherit;
+	font-size: inherit;
+	color: inherit;
+	background: none;
+	cursor: pointer;
+	padding: 5px 20px;
+	display: inline-block;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 700;
+	outline: none;
+	position: relative;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.btn-back {
+  background: #457DFB;
+  color: #fff;
+	height: 50px;
+	line-height: 40px;
+	font-size: 1rem;
+	overflow: hidden;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+
+.btn-back:active {
+  background: #457DFB;
+	top: 2px;
+}
+
+.btn-back span {
+	display: inline-block;
+	width: 100%;
+  height: 100%;
+  text-align: center;
+	-webkit-transition: all 0.3s;
+	-webkit-backface-visibility: hidden;
+	-moz-transition: all 0.3s;
+	-moz-backface-visibility: hidden;
+	transition: all 0.3s;
+	backface-visibility: hidden;
+}
+
+.btn-back:before {
+  position: absolute;
+	height: 100%;
+	width: 100%;
+	line-height: 1.8;
+	font-size: 180%;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.btn-back:active:before {
+  background: #4917ff;
+}
+
+
+.btn-confirm {
+  background: rgb(12, 235, 105);
+  color: #fff;
+	height: 40px;
+	line-height: 30px;
+	font-size: 0.9rem;
+	overflow: hidden;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+  backface-visibility: hidden;
+  margin-left:10px;
+}
+
+
+.btn-confirm:active {
+  background:rgb(13, 187, 86);
+	top: 2px;
+}
+
+.btn-confirm span {
+	display: inline-block;
+	width: 100%;
+  height: 100%;
+  text-align: center;
+	-webkit-transition: all 0.3s;
+	-webkit-backface-visibility: hidden;
+	-moz-transition: all 0.3s;
+	-moz-backface-visibility: hidden;
+	transition: all 0.3s;
+	backface-visibility: hidden;
+}
+
+.btn-confirm:before {
+  position: absolute;
+	height: 100%;
+	width: 100%;
+	line-height: 1.6;
+	font-size: 180%;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.btn-confirm:active:before {
+  background:rgb(13, 187, 86);
+}
+
+.btn-edit {
+  background: rgb(251, 127, 69);
+  color: #fff;
+	height: 40px;
+	line-height: 30px;
+	font-size: 0.9rem;
+	overflow: hidden;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+  backface-visibility: hidden;
+  margin-left:10px;
+}
+
+
+.btn-edit:active {
+  background: rgb(251, 127, 69);
+	top: 2px;
+}
+
+.btn-edit span {
+	display: inline-block;
+	width: 100%;
+  height: 100%;
+  text-align: center;
+	-webkit-transition: all 0.3s;
+	-webkit-backface-visibility: hidden;
+	-moz-transition: all 0.3s;
+	-moz-backface-visibility: hidden;
+	transition: all 0.3s;
+	backface-visibility: hidden;
+}
+
+.btn-edit:before {
+  position: absolute;
+	height: 100%;
+	width: 100%;
+	line-height: 1.6;
+	font-size: 180%;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.btn-edit:active:before {
+  background:rgb(252, 96, 23);
+
+
+}
+.btn-cancel {
+  background: rgb(255, 43, 43);
+  color: #fff;
+	height: 40px;
+	line-height: 30px;
+	font-size: 0.9rem;
+	overflow: hidden;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+  backface-visibility: hidden;
+  margin-left:10px;
+}
+
+
+.btn-cancel:active {
+  background: rgb(255, 43, 43);
+	top: 2px;
+}
+
+.btn-cancel span {
+	display: inline-block;
+	width: 100%;
+  height: 100%;
+  text-align: center;
+	-webkit-transition: all 0.3s;
+	-webkit-backface-visibility: hidden;
+	-moz-transition: all 0.3s;
+	-moz-backface-visibility: hidden;
+	transition: all 0.3s;
+	backface-visibility: hidden;
+}
+
+.btn-cancel:before {
+  position: absolute;
+	height: 100%;
+	width: 100%;
+	line-height: 1.6;
+	font-size: 180%;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.btn-cancel:active:before {
+  background: rgb(245, 9, 9);
+}
+
+
+.btn-5b:hover span {
+	-webkit-transform: translateX(200%);
+	-moz-transform: translateX(200%);
+	-ms-transform: translateX(200%);
+	transform: translateX(200%);
+}
+
+.btn-5b:before {
+	left: -100%;
+	top: 0;
+}
+
+.btn-5b:hover:before {
+	left: 0;
+}
+
+.icon-left::before
+{
+  font-family: 'Font Awesome 5 Free';
+  content: "\f060";
+  font-weight: 900;
+}
+
+.icon-edit::before
+{
+  font-family: 'Font Awesome 5 Free';
+  content: "\f044";
+  font-weight: 500;
+}
+
+
+.icon-abort::before
+{
+  font-family: 'Font Awesome 5 Free';
+  content: "\f057";
+  font-weight: 500;
+}
+
+
+.icon-check::before
+{
+  font-family: 'Font Awesome 5 Free';
+  content: "\f058";
+  font-weight: 500;
+}
+
+
+
+input
+{
+  margin-left:25px;
+  width: 75px;
+}
+
+mat-card-title
+{
+  margin-top: 10px;
+  font-size:2rem;
+  margin-bottom:20px;
+}
+
+mat-divider
+{
+  border-color:#4917ff;
+}
+mat-label
+{
+  font-size:1rem;
+}
+
+mat-card-content
+{
+  font-size:1.3rem;
+}
