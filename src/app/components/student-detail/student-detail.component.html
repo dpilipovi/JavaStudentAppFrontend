@@ -4,9 +4,9 @@
       <mat-divider></mat-divider>
       <br>
       <mat-card-content>
-        <span>JMBAG: </span>{{student.jmbag}}
+        <span>JMBAG: </span> {{student.jmbag}}
         <br>
-        <span>Broj ECTS bodova: </span>{{student.numberOfECTS}} <button *ngIf="!edit" class="btn btn-edit btn-5b icon-edit" (click)="edit=!edit">
+        <span>Broj ECTS bodova: </span> {{student.numberOfECTS}} <button *ngIf="!edit" class="btn btn-edit btn-5b icon-edit" (click)="edit=!edit">
           <span>IZMIJENI</span>
         </button>
         <span *ngIf="edit">
@@ -20,6 +20,14 @@
       </span>
       <br>
       <span *ngIf="student.tuitionShouldBePaid"> Student treba platiti školarinu. </span>
+      <br *ngIf="student.tuitionShouldBePaid">
+      <mat-list *ngIf="courses">
+        <span>Kolegiji na kojima je student upisan:</span>
+        <mat-list-item *ngFor="let course of courses">
+         {{course.name}}
+        </mat-list-item>
+      </mat-list>
+
 
   <!--<app-studij [ects]="student.numberOfECTS"></app-studij>-->
     <br>
