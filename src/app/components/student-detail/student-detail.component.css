@@ -9,6 +9,10 @@ span
   margin-bottom: 10px;
 }
 
+.mat-list-item{
+  max-height: 35px;
+  font-size: 1.3rem;
+}
 .btn
 {
   border: none;
