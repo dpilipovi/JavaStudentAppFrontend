@@ -58,6 +58,15 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
       catchError(this.handleError<Student>('updateStudent'))
       }
 
+    getStudentsByCourse(name): Observable<Student[]>
+    {
+      const url = `${this.studentsUrl}/getStudentsByCourse/${name}`;
+      return this.http.get<Student[]>(url,this.httpOptions).pipe(
+        tap(_ => console.log('fetched students by course')),
+        catchError(this.handleError<Student[]>('getStudentsByCourse', []))
+      );
+    }
+
     private handleError<T>(operation = 'operation', result?: T) {
       return (error: any): Observable<T> => {
       console.error(operation);

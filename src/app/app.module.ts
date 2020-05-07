@@ -19,6 +19,9 @@ import { MatIconModule } from  '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
+import { CoursesComponent } from './components/courses/courses.component';
+import { CourseDetailComponent } from './components/course-detail/course-detail.component';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +29,9 @@ import { MatButtonModule } from '@angular/material/button';
     StudentsComponent,
     StudentDetailComponent,
     StudijComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    CoursesComponent,
+    CourseDetailComponent
 
   ],
   imports: [

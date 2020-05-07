@@ -36,6 +36,22 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
         catchError(this.handleError<Course[]>('getCourses by jmbag')))
     }
 
+    getCoursesByName(name): Observable<Course[]> {
+      const url = `${this.courseUrl}/findByName/${name}`;
+      return this.http.get<Course[]>(url,this.httpOptions).pipe(
+        tap(_ => console.log('fetched courses by name')),
+        catchError(this.handleError<Course[]>('getCoursesByName', []))
+        );
+
+      }
+
+      getCourseByName(name): Observable<Course>{
+        const url = `${this.courseUrl}/findCourseByName/${name}`;
+        return this.http.get<Course>(url,this.httpOptions).pipe(
+          tap(_ => console.log(`fetched course by name`)),
+          catchError(this.handleError<Course>('getCourse by name')))
+      }
+
     private handleError<T>(operation = 'operation', result?: T) {
       return (error: any): Observable<T> => {
       console.error(operation);

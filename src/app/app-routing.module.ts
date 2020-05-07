@@ -4,6 +4,8 @@ import { StudentDetailComponent } from './components/student-detail/student-deta
 import { StudentsComponent } from './components/students/students.component';
 import { StudijComponent} from './components/studij/studij.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
+import { CoursesComponent } from './components/courses/courses.component';
+import { CourseDetailComponent } from './components/course-detail/course-detail.component';
 
 
 const routes: Routes = [
@@ -12,7 +14,10 @@ const routes: Routes = [
   //{ path: 'student-detail', component: StudentDetailComponent},
   { path: 'student-detail/:jmbag', component: StudentDetailComponent},
   { path: 'studij', component: StudijComponent},
-  { path: 'welcome', component: WelcomeComponent}
+  { path: 'welcome', component: WelcomeComponent},
+  { path: 'courses', component: CoursesComponent},
+  { path: 'course-detail/:name', component: CourseDetailComponent}
+
 ];
 
 
