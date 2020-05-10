@@ -7,8 +7,9 @@
       <div *ngIf="students">
       <mat-list>
         <mat-list-item *ngFor="let student of students">
-          <a class="pull-right left" [routerLink]="['/student-detail',student.jmbag]">{{student.jmbag}} {{student.numberOfECTS}} ECTS  </a>
-          <button class="btn btn-delete btn-5a icon-remove" (click)="deleteStudent(student.jmbag)">
+          <a *ngIf="isRoleAdmin()" class="pull-right left" [routerLink]="['/student-detail',student.jmbag]">{{student.jmbag}} {{student.numberOfECTS}} ECTS </a>
+          <a *ngIf="!isRoleAdmin()" class="pull-right left2">{{student.jmbag}} {{student.numberOfECTS}} ECTS </a>
+          <button *ngIf="isRoleAdmin()" class="btn btn-delete btn-5a icon-remove" (click)="deleteStudent(student.jmbag)">
             <span>izbriši</span>
           </button>
         </mat-list-item>
@@ -18,7 +19,7 @@
 
 <br>
 
-<mat-card >
+<mat-card *ngIf="isRoleAdmin()">
     <mat-card-title>DODAJ STUDENTA</mat-card-title>
     <mat-divider></mat-divider>
     <br>

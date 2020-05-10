@@ -21,6 +21,12 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
 import { CoursesComponent } from './components/courses/courses.component';
 import { CourseDetailComponent } from './components/course-detail/course-detail.component';
+import { LoginComponent } from './components/login/login.component';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { AuthExpiredInterceptor } from './interceptors/auth-expired.inteceptor';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { ForbiddenComponent } from './components/forbidden/forbidden.component';
+import { PagenotfoundComponent} from './components/pagenotfound/pagenotfound.component'
 
 
 @NgModule({
@@ -31,7 +37,11 @@ import { CourseDetailComponent } from './components/course-detail/course-detail.
     StudijComponent,
     WelcomeComponent,
     CoursesComponent,
-    CourseDetailComponent
+    CourseDetailComponent,
+    LoginComponent,
+    NavbarComponent,
+    ForbiddenComponent,
+    PagenotfoundComponent
 
   ],
   imports: [
@@ -63,7 +73,18 @@ import { CourseDetailComponent } from './components/course-detail/course-detail.
     MatSnackBarModule,
     MatToolbarModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthExpiredInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

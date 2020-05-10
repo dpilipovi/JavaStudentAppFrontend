@@ -10,6 +10,7 @@ import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/materia
 import { MatSnackBar } from '@angular/material/snack-bar';
 import AOS from 'aos';
 import { Validators, FormControl, FormBuilder, FormGroup } from '@angular/forms';
+import { UserService } from 'src/app/services/user.service';
 
 
 export const MY_FORMATS = {
@@ -50,7 +51,7 @@ studentAddForm: FormGroup;
 submitted = false;
 
 
-constructor(private studentService: StudentService,private _adapter: DateAdapter<any>,private _snackBar: MatSnackBar,public fb: FormBuilder) { }
+constructor(private studentService: StudentService,private _adapter: DateAdapter<any>,private _snackBar: MatSnackBar,public fb: FormBuilder, private userService : UserService) { }
 
 /*croatia() {
   this._adapter.setLocale('hr');
@@ -165,6 +166,12 @@ ngOnInit() {
     }
 
     alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.studentAddForm.value))
-}
+  }
+
+  isRoleAdmin()
+  {
+    return this.userService.isRoleAdmin()
+  }
+
 
 }

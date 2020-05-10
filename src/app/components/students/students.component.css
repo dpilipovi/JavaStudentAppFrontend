@@ -14,6 +14,12 @@ a.left
     position: relative;
 }
 
+a.left2
+{
+    color:black;
+    position: relative;
+}
+
 a.left:before {
   content: "";
   position: absolute;
