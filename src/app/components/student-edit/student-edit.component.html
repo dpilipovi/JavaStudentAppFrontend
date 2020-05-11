@@ -1,0 +1,83 @@
+<div class="container">
+    <mat-card>
+        <mat-card-title>UREĐIVANJE STUDENTA</mat-card-title>
+        <mat-divider></mat-divider>
+        <br>
+        <mat-card-content>
+            <form [formGroup]="studentEditForm">
+                <mat-form-field class="input-width">
+                    <mat-label>Ime</mat-label>
+                    <input type="text" matInput required formControlName="firstName">
+                </mat-form-field>
+                <mat-error
+                    *ngIf="studentEditForm.get('firstName').touched && studentEditForm.get('firstName').hasError('required')">
+                    Ime ne smije biti prazno!
+                </mat-error>
+                <br>
+                <mat-form-field class="input-width">
+                    <mat-label>Prezime</mat-label>
+                    <input matInput #lastName required formControlName="lastName" >
+                </mat-form-field>
+                <mat-error
+                    *ngIf="studentEditForm.get('lastName').touched && studentEditForm.get('lastName').hasError('required')">
+                    Prezime ne smije biti prazno!
+                </mat-error>
+                <br>
+                <mat-form-field class="input-width">
+                    <mat-label>JMBAG</mat-label>
+                    <input type="text" matInput readonly formControlName="jmbag" required>
+                  </mat-form-field>
+                  <mat-error  *ngIf="studentEditForm.get('jmbag').touched && studentEditForm.get('jmbag').hasError('required')">
+                    Potrebno je unijeti broj JMBAG!
+                  </mat-error>
+                  <mat-error *ngIf="studentEditForm.get('jmbag').touched && studentEditForm.get('jmbag').hasError('maxLength') ">
+                    JMBAG mora imati 10 znamenaka!
+                  </mat-error>
+                  <mat-error *ngIf="studentEditForm.get('jmbag').touched && studentEditForm.get('jmbag').hasError('minLength') ">
+                    JMBAG mora imati 10 znamenaka!
+                  </mat-error>
+                  <mat-error *ngIf="studentEditForm.get('jmbag').touched && studentEditForm.get('jmbag').hasError('pattern')">
+                    JMBAG mora biti broj!
+                  </mat-error>
+                <br>
+                <mat-form-field class="input-width">
+                    <mat-label>ECTS</mat-label>
+                    <input matInput #numberOfECTS max="480" min="0" required formControlName="numberOfECTS" >
+                </mat-form-field>
+                <mat-error
+                    *ngIf="studentEditForm.get('numberOfECTS').touched && studentEditForm.get('numberOfECTS').hasError('required')">
+                    Potrebno je unijeti broj ectsa
+                </mat-error>
+                <mat-error
+                    *ngIf="studentEditForm.get('numberOfECTS').touched && studentEditForm.get('numberOfECTS').hasError('min')">
+                    Ects mora biti veci ili jednak 0
+                </mat-error>
+                <mat-error
+                    *ngIf="studentEditForm.get('numberOfECTS').touched &&  studentEditForm.get('numberOfECTS').hasError('max')">
+                    Ects mora biti manji od 480
+                </mat-error>
+                <br>
+                <mat-form-field class="input-width">
+                    <mat-label>Datum rođenja</mat-label>
+                    <input matInput [matDatepicker]="picker" #dateOfBirth required formControlName="dateOfBirth" >
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+                <mat-error
+                    *ngIf="studentEditForm.get('dateOfBirth').touched &&  studentEditForm.get('dateOfBirth').hasError('required')">
+                    Potrebno je unijeti datum rođenja
+                </mat-error>
+                <br>
+                <button class="btn2 btn-confirm btn-5a icon-check"
+                    (click)="editStudent()">
+                    <span>Uredi</span>
+                </button>
+                <button class="btn2 btn-cancel btn-5a icon-abort"
+                [routerLink]="['/student-detail',jmbag]">
+                    <span>Nazad</span>
+                </button>
+            </form>
+        </mat-card-content>
+    </mat-card>
+
+</div>

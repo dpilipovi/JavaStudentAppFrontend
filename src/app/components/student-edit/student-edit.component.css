@@ -1,0 +1,313 @@
+.container
+{
+  margin-top:4rem;
+}
+
+a:hover
+{
+  text-decoration: none;
+}
+
+a.left
+{
+    color:black;
+    position: relative;
+}
+
+a.left2
+{
+    color:black;
+    position: relative;
+}
+
+a.left:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 1.5px;
+  bottom: 0;
+  left: 0;
+  background-color: #ff173c;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+a.left:hover:before {
+  visibility: visible;
+  width: 100%;
+}
+
+
+.hvr-sweep-to-right {
+  margin-left: 1rem;
+  font-weight: bold;
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+.hvr-sweep-to-right:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #ff173c;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: 0 50%;
+  transform-origin: 0 50%;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-sweep-to-right:hover, .hvr-sweep-to-right:focus, .hvr-sweep-to-right:active {
+  color: white;
+}
+.hvr-sweep-to-right:hover:before, .hvr-sweep-to-right:focus:before, .hvr-sweep-to-right:active:before {
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+
+.btn {
+	border: none;
+	font-family: inherit;
+	font-size: inherit;
+	color: inherit;
+	background: none;
+	cursor: pointer;
+	padding: 5px 20px;
+	display: inline-block;
+	margin: 5px 30px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 700;
+	outline: none;
+	position: relative;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.btn2
+{
+  border: none;
+	font-family: inherit;
+	font-size: inherit;
+	color: inherit;
+	background: none;
+	cursor: pointer;
+	padding: 5px 20px;
+	display: inline-block;
+	margin-top: 10px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 700;
+	outline: none;
+	position: relative;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.btn:after {
+	content: '';
+	position: absolute;
+	z-index: -1;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.btn2:after {
+	content: '';
+	position: absolute;
+	z-index: -1;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+
+/* Button 5a */
+.btn-5a:hover span {
+	-webkit-transform: translateY(300%);
+	-moz-transform: translateY(300%);
+	-ms-transform: translateY(300%);
+	transform: translateY(300%);
+}
+.btn-cancel {
+    background: rgb(255, 43, 43);
+    color: #fff;
+    height: 40px;
+    line-height: 30px;
+    font-size: 0.9rem;
+    overflow: hidden;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+    margin-left: 1rem;
+  }
+  
+  .btn-cancel:active {
+    background: rgb(255, 43, 43);
+    top: 2px;
+  }
+  
+  .btn-cancel span {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    -webkit-transition: all 0.3s;
+    -webkit-backface-visibility: hidden;
+    -moz-transition: all 0.3s;
+    -moz-backface-visibility: hidden;
+    transition: all 0.3s;
+    backface-visibility: hidden;
+  }
+  
+  .btn-cancel:before {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    line-height: 1.6;
+    font-size: 180%;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  
+  .btn-cancel:active:before {
+    background: rgb(245, 9, 9);
+  }
+  
+.btn-confirm {
+    background: rgb(12, 235, 105);
+    color: #fff;
+    height: 40px;
+    line-height: 30px;
+    font-size: 0.9rem;
+    overflow: hidden;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  
+  .btn-confirm:active {
+    background: rgb(13, 187, 86);
+    top: 2px;
+  }
+  
+  .btn-confirm span {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    -webkit-transition: all 0.3s;
+    -webkit-backface-visibility: hidden;
+    -moz-transition: all 0.3s;
+    -moz-backface-visibility: hidden;
+    transition: all 0.3s;
+    backface-visibility: hidden;
+  }
+  
+  .btn-confirm:before {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    line-height: 1.6;
+    font-size: 180%;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  
+  .btn-confirm:active:before {
+    background: rgb(13, 187, 86);
+  }
+
+.btn-5a:before {
+	left: 0;
+	top: -100%;
+}
+
+.btn-5a:hover:before {
+	top: 0;
+}
+
+
+.btn-5b:hover span {
+	-webkit-transform: translateX(200%);
+	-moz-transform: translateX(200%);
+	-ms-transform: translateX(200%);
+	transform: translateX(200%);
+}
+
+.btn-5b:before {
+	left: -100%;
+	top: 0;
+}
+
+.btn-5b:hover:before {
+	left: 0;
+}
+
+.icon-abort::before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f057";
+    font-weight: 500;
+  }
+  
+  .icon-check::before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f058";
+    font-weight: 500;
+  }
+
+mat-card-title
+{
+  margin-top: 10px;
+  font-size:2rem;
+  margin-bottom:20px;
+}
+
+mat-divider
+{
+  border-color: orange;
+}
+mat-label
+{
+  font-size:1rem;
+}
+mat-label
+{
+  font-size:1rem;
+}
+
+input
+{
+  font-size:1rem;
+}
+
+.input-width
+{
+  width:300px;
+}
+
+mat-datepicker-toggle
+{
+  font-size:1.5rem;
+}
