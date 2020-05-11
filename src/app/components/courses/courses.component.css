@@ -1,0 +1,51 @@
+.container
+{
+  margin-top:4rem;
+}
+
+
+mat-card-title
+{
+  margin-top: 10px;
+  font-size:2rem;
+  margin-bottom:20px;
+}
+
+mat-divider
+{
+  border-color:#4917ff;
+}
+mat-label
+{
+  font-size:1rem;
+}
+
+mat-card-content
+{
+  font-size:1.3rem;
+}
+
+input
+{
+  font-size:1rem;
+}
+
+.input-width
+{
+  width:300px;
+}
+
+mat-datepicker-toggle
+{
+  font-size:1.5rem;
+}
+
+mat-list-item
+{
+  margin-bottom: 10px;
+}
+
+mat-list-item a
+{
+  font-size:1.3rem;
+}

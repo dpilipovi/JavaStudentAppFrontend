@@ -1,0 +1,60 @@
+mat-sidenav {
+  width: 250px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.left
+{
+  float:left;
+  font-size:2rem;
+}
+
+a:hover, a:active{
+  color: lightgray;
+}
+
+.list-horizontal {
+  padding: 0;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0 auto;
+  padding: 0;
+  overflow: hidden;
+  width:85%;
+  float:right;
+}
+li
+{
+  float: right;
+  padding:0.5rem;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+}
+
+li a:hover
+{
+  color:rgb(168, 168, 168);
+  cursor: pointer;
+}
+
+
+mat-toolbar{
+  border-radius: 3px;
+}
+
+@media(max-width: 959px){
+  mat-toolbar{
+      border-radius: 0px;
+  }
+}

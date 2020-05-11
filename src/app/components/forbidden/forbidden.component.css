@@ -1,0 +1,18 @@
+.forbidden
+{
+  margin-top:4rem;
+  font-size: 4rem;
+  color:black;
+  text-align: center;
+}
+
+mat-divider
+{
+  margin-bottom: 20px;
+}
+
+.center
+{
+  margin: 0 auto;
+  max-width:200px;
+}

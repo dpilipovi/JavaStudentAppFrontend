@@ -1,0 +1,23 @@
+<div class="container" data-aos="fade-down">
+  <mat-card>
+    <mat-card-title>Pretrazivanje predmeta</mat-card-title>
+    <mat-divider></mat-divider>
+    <br>
+    <mat-form-field >
+      <mat-label>Ime</mat-label>
+      <input matInput #name>
+    </mat-form-field>
+    <br>
+    <br>
+    <button mat-raised-button color="primary" (click)="getCoursesByName(name)">Pretrazi</button>
+    <br>
+    <div *ngIf="courses" data-aos="fade-up">
+    <mat-list>
+      <mat-list-item *ngFor="let course of courses">
+        <a *ngIf="isRoleAdmin()" class="pull-right left" [routerLink]="['/course-detail',course.name]">{{course.name}} </a>
+        <a *ngIf="!isRoleAdmin()" class="pull-right left2">{{course.name}} </a>
+      </mat-list-item>
+    </mat-list>
+  </div>
+  </mat-card>
+</div>

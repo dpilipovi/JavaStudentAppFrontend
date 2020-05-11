@@ -1,0 +1,22 @@
+<mat-toolbar color="primary"  data-aos="fade-up">
+  <ul class="list-horizontal">
+    <div *ngIf="isUserLoggedIn()">
+      <li class="left">
+        <a routerLink="/welcome">StudApp</a>
+      </li>
+      <li>
+        <a (click)="logout()">Odjava</a>
+      </li>
+      <li>
+          <a routerLink="/courses">Courses</a>
+      </li>
+      <li>
+        <a routerLink="/students">Students</a>
+      </li>
+    </div>
+      <li *ngIf="!isUserLoggedIn()" class="left">
+        <a routerLink="/login">StudApp</a>
+      </li>
+  </ul>
+</mat-toolbar>
+

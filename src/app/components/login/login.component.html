@@ -1,0 +1,35 @@
+<div class="container">
+  <mat-card>
+    <mat-card-title>Login</mat-card-title>
+    <mat-divider></mat-divider>
+    <br>
+    <mat-card-content>
+      <form [formGroup] = "loginForm">
+        <mat-form-field class="input-width">
+          <mat-label>Korisnicko ime</mat-label>
+          <input type="text" matInput appInputAutofocus formControlName="username" required>
+        </mat-form-field>
+        <mat-error  *ngIf="loginForm.get('username').touched && loginForm.get('username').hasError('required')">
+          Potrebno je unijeti username
+        </mat-error>
+        <br>
+        <mat-form-field class="input-width">
+          <mat-label>Lozinka</mat-label>
+          <input matInput autocomplete="current-password" name="password" required formControlName="password" type="password">
+        </mat-form-field>
+        <mat-error  *ngIf="loginForm.get('password').touched && loginForm.get('password').hasError('required')">
+          Potrebno je unijeti password
+        </mat-error >
+        <br>
+        <button mat-raised-button color="primary" (click)="login()"[disabled]="!loginForm.valid"type="submit">Prijava </button>
+        <br>
+      </form>
+        <mat-error *ngIf="loginFailed">
+          Netocno korisnicko ime ili lozinka!
+        </mat-error>
+
+    </mat-card-content>
+
+  </mat-card>
+
+</div>
