@@ -30,7 +30,7 @@
           <input type="text" matInput #firstName required formControlName="firstName">
         </mat-form-field>
         <mat-error  *ngIf="studentAddForm.get('firstName').touched && studentAddForm.get('firstName').hasError('required')">
-          Potrebno je unijeti ime
+          Potrebno je unijeti ime!
         </mat-error>
         <br>
         <mat-form-field class="input-width">
@@ -38,18 +38,24 @@
           <input matInput #lastName required formControlName="lastName">
         </mat-form-field>
         <mat-error  *ngIf="studentAddForm.get('lastName').touched && studentAddForm.get('lastName').hasError('required')">
-          Potrebno je unijeti prezime
+          Potrebno je unijeti prezime!
         </mat-error >
         <br>
         <mat-form-field class="input-width">
           <mat-label>JMBAG</mat-label>
-          <input type="text" matInput #jmbag required formControlName="jmbag">
+          <input type="text" matInput #jmbag required formControlName="jmbag" maxlength="10" minlength="10">
         </mat-form-field>
         <mat-error  *ngIf="studentAddForm.get('jmbag').touched && studentAddForm.get('jmbag').hasError('required')">
-          Potrebno je unijeti broj JMBAG
+          Potrebno je unijeti broj JMBAG!
         </mat-error >
-        <mat-error *ngIf="studentAddForm.get('jmbag').touched && (studentAddForm.get('numberOfECTS').hasError('min') || studentAddForm.get('numberOfECTS').hasError('max')) ">
-          JMBAG mora imati 10 znamenaka
+        <mat-error *ngIf="studentAddForm.get('jmbag').touched && studentAddForm.get('jmbag').hasError('maxLength') ">
+          JMBAG mora imati 10 znamenaka!
+        </mat-error>
+        <mat-error *ngIf="studentAddForm.get('jmbag').touched && studentAddForm.get('jmbag').hasError('minLength') ">
+          JMBAG mora imati 10 znamenaka!
+        </mat-error>
+        <mat-error *ngIf="studentAddForm.get('jmbag').touched && studentAddForm.get('jmbag').hasError('pattern')">
+          JMBAG mora biti broj!
         </mat-error>
         <br>
         <mat-form-field class="input-width">
@@ -57,13 +63,13 @@
           <input matInput #numberOfECTS max="480" min="0" required formControlName="numberOfECTS">
         </mat-form-field>
         <mat-error  *ngIf="studentAddForm.get('numberOfECTS').touched && studentAddForm.get('numberOfECTS').hasError('required')">
-          Potrebno je unijeti broj ectsa
+          Potrebno je unijeti broj ectsa!
         </mat-error>
         <mat-error  *ngIf="studentAddForm.get('numberOfECTS').touched && studentAddForm.get('numberOfECTS').hasError('min')">
-          Ects mora biti veci ili jednak 0
+          Ects mora biti veci ili jednak 0!
         </mat-error>
         <mat-error  *ngIf="studentAddForm.get('numberOfECTS').touched &&  studentAddForm.get('numberOfECTS').hasError('max')">
-          Ects mora biti manji od 480
+          Ects mora biti manji od 480!
         </mat-error>
         <br>
         <mat-form-field class="input-width">
@@ -73,7 +79,7 @@
           <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
         <mat-error *ngIf="studentAddForm.get('dateOfBirth').touched &&  studentAddForm.get('dateOfBirth').hasError('required')">
-         Potrebno je unijeti datum rođenja
+         Potrebno je unijeti datum rođenja!
         </mat-error >
         <br>
       <button class="btn2 btn-add btn-5a icon-add" (click)="addStudent(firstName.value, lastName.value, jmbag.value,

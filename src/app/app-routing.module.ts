@@ -11,21 +11,22 @@ import { AuthGuardService } from './guards/auth-guard.service';
 import { AdminAuthGuardService } from './guards/admin-auth-guard.service';
 import { ForbiddenComponent } from './components/forbidden/forbidden.component';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
+import { StudentEditComponent } from './components/student-edit/student-edit.component';
 
 
 const routes: Routes = [
   { path: '', redirectTo: '/welcome', pathMatch: 'full' },
   { path:'students', component: StudentsComponent, canActivate: [AuthGuardService] },
   { path: 'student-detail/:jmbag', component: StudentDetailComponent, canActivate: [AdminAuthGuardService]},
+  { path: 'student-edit/:jmbag', component: StudentEditComponent, canActivate: [AdminAuthGuardService]},
   //{ path: 'studij', component: StudijComponent},
   { path: 'welcome', component: WelcomeComponent, canActivate: [AuthGuardService]},
   { path: 'courses', component: CoursesComponent, canActivate: [AuthGuardService]},
   { path: 'course-detail/:name', component: CourseDetailComponent , canActivate: [AdminAuthGuardService]},
   { path: 'login', component: LoginComponent},
   { path: 'forbidden', component: ForbiddenComponent},
-  { path: '**', component: PagenotfoundComponent }
-
-
+  { path: '**', component: PagenotfoundComponent },
+ 
 ];
 
 

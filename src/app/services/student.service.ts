@@ -5,6 +5,7 @@ import { Observable, of } from "rxjs";
 import http from "../http-common";
 import { map, catchError, tap } from 'rxjs/operators';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { SERVER_API_URL } from '../constants/app.constants';
 
 @Injectable({
   providedIn: 'root'
@@ -14,16 +15,14 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   })
   export class StudentService {
 
-    private studentsUrl = 'http://localhost:8080/student';
-    httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-    };
+    private studentsUrl = `${SERVER_API_URL}/student`;
+  
     constructor(
     private http: HttpClient
     ) { }
 
     getStudents(): Observable<Student[]> {
-      return this.http.get<Student[]>(this.studentsUrl,this.httpOptions).pipe(
+      return this.http.get<Student[]>(this.studentsUrl).pipe(
         tap(_ => console.log('fetched students')),
         catchError(this.handleError<Student[]>('getStudents', []))
         );
@@ -32,7 +31,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
     getStudentByJmbag(jmbag): Observable<Student>{
       const url = `${this.studentsUrl}/${jmbag}`;
-      return this.http.get<Student>(url,this.httpOptions).pipe(
+      return this.http.get<Student>(url).pipe(
         tap(_ => console.log(`fetched student`)),
         catchError(this.handleError<Student>('get Student')))
     }
@@ -41,27 +40,28 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
     {
       const url= `${this.studentsUrl}/${jmbag}`;
       //console.log(url)
-      return this.http.delete(url,this.httpOptions).subscribe(_ => console.log(`deleted student JMBAG=`+jmbag)),
+      return this.http.delete(url).subscribe(_ => console.log(`deleted student JMBAG=`+jmbag)),
         catchError(this.handleError<Student>('deleteStudent'))
 
     }
 
     addStudent(student: Student): Observable<Student> {
-      return this.http.post<Student>(this.studentsUrl,student,this.httpOptions).pipe(
+      return this.http.post<Student>(this.studentsUrl,student).pipe(
         tap(_ => console.log(`added student`)),
         catchError(this.handleError<Student>('addStudent')))
     }
 
-    updateStudentECTS(jmbag : String, ects : number) {
-      const url = `${this.studentsUrl}/${jmbag}`;
-      return this.http.put<Student>(url, ects, this.httpOptions).subscribe(() => console.log(`updated ects for student with jmbag=${jmbag}`)),
-      catchError(this.handleError<Student>('updateStudent'))
+    editStudent(student : Student): Observable<Student> {
+      const url = `${this.studentsUrl}/${student.jmbag}`;
+      return this.http.put<Student>(url, student).pipe(
+        tap(_ => console.log(`edited student`)),
+        catchError(this.handleError<Student>('editStudent')))
       }
 
     getStudentsByCourse(name): Observable<Student[]>
     {
       const url = `${this.studentsUrl}/getStudentsByCourse/${name}`;
-      return this.http.get<Student[]>(url,this.httpOptions).pipe(
+      return this.http.get<Student[]>(url).pipe(
         tap(_ => console.log('fetched students by course')),
         catchError(this.handleError<Student[]>('getStudentsByCourse', []))
       );

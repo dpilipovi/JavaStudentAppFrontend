@@ -26,7 +26,8 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { AuthExpiredInterceptor } from './interceptors/auth-expired.inteceptor';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ForbiddenComponent } from './components/forbidden/forbidden.component';
-import { PagenotfoundComponent} from './components/pagenotfound/pagenotfound.component'
+import { PagenotfoundComponent} from './components/pagenotfound/pagenotfound.component';
+import { StudentEditComponent } from './components/student-edit/student-edit.component'
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { PagenotfoundComponent} from './components/pagenotfound/pagenotfound.com
     LoginComponent,
     NavbarComponent,
     ForbiddenComponent,
-    PagenotfoundComponent
+    PagenotfoundComponent,
+    StudentEditComponent
 
   ],
   imports: [
