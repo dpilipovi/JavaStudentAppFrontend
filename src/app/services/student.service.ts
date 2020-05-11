@@ -16,7 +16,7 @@ import { SERVER_API_URL } from '../constants/app.constants';
   export class StudentService {
 
     private studentsUrl = `${SERVER_API_URL}/student`;
-  
+
     constructor(
     private http: HttpClient
     ) { }
@@ -51,12 +51,13 @@ import { SERVER_API_URL } from '../constants/app.constants';
         catchError(this.handleError<Student>('addStudent')))
     }
 
-    editStudent(student : Student): Observable<Student> {
-      const url = `${this.studentsUrl}/${student.jmbag}`;
-      return this.http.put<Student>(url, student).pipe(
-        tap(_ => console.log(`edited student`)),
-        catchError(this.handleError<Student>('editStudent')))
-      }
+    editStudent(student: Student): Observable<any> {
+      const url = `${this.studentsUrl}`;
+      return this.http.put(url, student).pipe(
+        tap(_ => console.log(`updated student jmbag=${student.jmbag}`)),
+        catchError(this.handleError<any>('updateStudent'))
+      );
+    }
 
     getStudentsByCourse(name): Observable<Student[]>
     {

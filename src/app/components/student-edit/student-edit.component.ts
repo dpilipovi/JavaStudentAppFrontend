@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { StudentService } from 'src/app/services/student.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Student } from 'src/app/interfaces/student';
 import { DateAdapter, MAT_DATE_LOCALE, MAT_DATE_FORMATS } from '@angular/material/core';
 import { MomentDateAdapter, MAT_MOMENT_DATE_ADAPTER_OPTIONS, MAT_MOMENT_DATE_FORMATS } from '@angular/material-moment-adapter';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
-
+import { delay } from 'src/app/util/delay';
 
 export const MY_FORMATS = {
   parse: {
@@ -42,7 +42,8 @@ export class StudentEditComponent implements OnInit {
   studentEditForm : FormGroup
 
 
-  constructor(private _snackBar: MatSnackBar, private studentService : StudentService, private route: ActivatedRoute, private _adapter: DateAdapter<any>, public fb: FormBuilder) { }
+
+  constructor(private _snackBar: MatSnackBar, private studentService : StudentService, private route: ActivatedRoute, private _adapter: DateAdapter<any>, public fb: FormBuilder, private router: Router) { }
 
   ngOnInit(): void {
     this.jmbag = this.route.snapshot.paramMap.get('jmbag');
@@ -59,7 +60,7 @@ export class StudentEditComponent implements OnInit {
        })
 
       })
-    
+
 
     this.studentEditForm = this.fb.group({
       firstName: new FormControl('', [
@@ -93,9 +94,16 @@ export class StudentEditComponent implements OnInit {
     this.student.lastName=this.studentEditForm.controls['lastName'].value;
     this.student.numberOfECTS=this.studentEditForm.controls['numberOfECTS'].value;
 
+    if( this.studentEditForm.controls['dateOfBirth'].value != this.student.dateOfBirth)
+    {
     let datum = this.studentEditForm.controls['dateOfBirth'].value
-    console.log(datum)
     this.student.dateOfBirth=this._to2digit(datum._i.date)+'.'+this._to2digit(datum._i.month)+'.'+datum._i.year+'.';
+    }
+    else
+    {
+      let datum = this.studentEditForm.controls['dateOfBirth'].value.split("-")
+      this.student.dateOfBirth=datum[2]+"."+datum[1]+"."+datum[0]+"."
+    }
 
     this.studentService.editStudent(this.student).subscribe(
       student =>
@@ -103,6 +111,7 @@ export class StudentEditComponent implements OnInit {
         if(student)
         {
           this.openSuccessSnackBar("Student uspjesno izmijenjen")
+          delay(2000).then(() => this.router.navigate(['student-detail/'+this.jmbag]));
         }
         else  this.openErrorSnackBar("Dogodila se greška na bazi!")
       }
