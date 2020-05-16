@@ -1,16 +1,16 @@
 <div class="container" data-aos="fade-down">
   <mat-card >
-      <mat-card-title>STUDENTI</mat-card-title>
+      <mat-card-title>{{'students.title' | translate}}</mat-card-title>
       <mat-divider></mat-divider>
       <br>
-      <div *ngIf="!students || students.length<1">Nema studenata</div>
+      <div *ngIf="!students || students.length<1">{{'students.no_students' | translate}}</div>
       <div *ngIf="students">
       <mat-list>
         <mat-list-item *ngFor="let student of students">
-          <a *ngIf="isRoleAdmin()" class="pull-right left" [routerLink]="['/student-detail',student.jmbag]">{{student.jmbag}} {{student.numberOfECTS}} ECTS </a>
-          <a *ngIf="!isRoleAdmin()" class="pull-right left2">{{student.jmbag}} {{student.numberOfECTS}} ECTS </a>
+          <a *ngIf="isRoleAdmin()" class="pull-right left" [routerLink]="['/student-detail',student.jmbag]">{{student.jmbag}} {{student.numberOfECTS}} {{'students.student_ects' | translate}} </a>
+          <a *ngIf="!isRoleAdmin()" class="pull-right left2">{{student.jmbag}} {{student.numberOfECTS}} {{'students.student_ects' | translate}} </a>
           <button *ngIf="isRoleAdmin()" class="btn btn-delete btn-5a icon-remove" (click)="deleteStudent(student.jmbag)">
-            <span>izbriši</span>
+            <span>{{'students.delete_button' | translate}}</span>
           </button>
         </mat-list-item>
       </mat-list>
@@ -20,71 +20,71 @@
 <br>
 
 <mat-card *ngIf="isRoleAdmin()">
-    <mat-card-title>DODAJ STUDENTA</mat-card-title>
+    <mat-card-title>{{'students.add_student_title' | translate}}</mat-card-title>
     <mat-divider></mat-divider>
     <br>
     <mat-card-content>
       <form [formGroup] = "studentAddForm">
         <mat-form-field class="input-width">
-          <mat-label>Ime</mat-label>
+          <mat-label>{{'students.add_student_firstname' | translate}}</mat-label>
           <input type="text" matInput #firstName required formControlName="firstName">
         </mat-form-field>
         <mat-error  *ngIf="studentAddForm.get('firstName').touched && studentAddForm.get('firstName').hasError('required')">
-          Potrebno je unijeti ime!
+          {{'students.add_student_firstname_error_required' | translate}}
         </mat-error>
         <br>
         <mat-form-field class="input-width">
-          <mat-label>Prezime</mat-label>
+          <mat-label>{{'students.add_student_lastname' | translate}}</mat-label>
           <input matInput #lastName required formControlName="lastName">
         </mat-form-field>
         <mat-error  *ngIf="studentAddForm.get('lastName').touched && studentAddForm.get('lastName').hasError('required')">
-          Potrebno je unijeti prezime!
+          {{'students.add_student_lastname_error_required' | translate}}!
         </mat-error >
         <br>
         <mat-form-field class="input-width">
-          <mat-label>JMBAG</mat-label>
+          <mat-label>{{'students.add_student_jmbag' | translate}}</mat-label>
           <input type="text" matInput #jmbag required formControlName="jmbag" maxlength="10" minlength="10">
         </mat-form-field>
         <mat-error  *ngIf="studentAddForm.get('jmbag').touched && studentAddForm.get('jmbag').hasError('required')">
-          Potrebno je unijeti broj JMBAG!
+          {{'students.add_student_jmbag_error_required' | translate}}
         </mat-error >
         <mat-error *ngIf="studentAddForm.get('jmbag').touched && studentAddForm.get('jmbag').hasError('maxLength') ">
-          JMBAG mora imati 10 znamenaka!
+          {{'students.add_student_jmbag_error_length' | translate}}
         </mat-error>
         <mat-error *ngIf="studentAddForm.get('jmbag').touched && studentAddForm.get('jmbag').hasError('minLength') ">
-          JMBAG mora imati 10 znamenaka!
+          {{'students.add_student_jmbag_error_length' | translate}}
         </mat-error>
         <mat-error *ngIf="studentAddForm.get('jmbag').touched && studentAddForm.get('jmbag').hasError('pattern')">
-          JMBAG mora biti broj!
+          {{'students.add_student_jmbag_error_number' | translate}}
         </mat-error>
         <br>
         <mat-form-field class="input-width">
-          <mat-label>ECTS</mat-label>
+          <mat-label>  {{'students.add_student_ects' | translate}}</mat-label>
           <input matInput #numberOfECTS max="480" min="0" required formControlName="numberOfECTS">
         </mat-form-field>
         <mat-error  *ngIf="studentAddForm.get('numberOfECTS').touched && studentAddForm.get('numberOfECTS').hasError('required')">
-          Potrebno je unijeti broj ectsa!
+          {{'students.add_student_ects_error_length' | translate}}
         </mat-error>
         <mat-error  *ngIf="studentAddForm.get('numberOfECTS').touched && studentAddForm.get('numberOfECTS').hasError('min')">
-          Ects mora biti veci ili jednak 0!
+          {{'students.add_student_ects_error_min' | translate}}
         </mat-error>
         <mat-error  *ngIf="studentAddForm.get('numberOfECTS').touched &&  studentAddForm.get('numberOfECTS').hasError('max')">
-          Ects mora biti manji od 480!
+          {{'students.add_student_ects_error_max' | translate}}
         </mat-error>
         <br>
         <mat-form-field class="input-width">
-          <mat-label>Datum rođenja</mat-label>
+          <mat-label> {{'students.add_student_dob' | translate}}</mat-label>
           <input matInput [matDatepicker]="picker" #dateOfBirth required formControlName="dateOfBirth">
           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
         <mat-error *ngIf="studentAddForm.get('dateOfBirth').touched &&  studentAddForm.get('dateOfBirth').hasError('required')">
-         Potrebno je unijeti datum rođenja!
+          {{'students.add_student_dob_error_required' | translate}}
         </mat-error >
         <br>
       <button class="btn2 btn-add btn-5a icon-add" (click)="addStudent(firstName.value, lastName.value, jmbag.value,
       +numberOfECTS.value,dateOfBirth.value); firstName.value=''; lastName.value=''; jmbag.value=''; numberOfECTS.value='';dateOfBirth.value=''">
-        <span>Dodaj</span>
+        <span> {{'students.add_student_button' | translate}}</span>
       </button>
       </form>
     </mat-card-content>

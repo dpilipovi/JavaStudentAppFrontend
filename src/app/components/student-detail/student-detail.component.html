@@ -1,23 +1,23 @@
 <div class="container" data-aos="fade-down">
   <mat-card *ngIf="student">
-      <mat-card-title>DETALJI</mat-card-title>
+      <mat-card-title>{{'studentDetail.title' | translate}}</mat-card-title>
       <mat-divider></mat-divider>
       <br>
       <mat-card-content>
       <button *ngIf="!edit" class="btn btn-edit btn-5b icon-edit" [routerLink]="['/student-edit',jmbag]">
-        <span>IZMIJENI</span>
+        <span>{{'studentDetail.button_edit' | translate}}</span>
       </button>
       <span>{{student.firstName}} </span>
       <br>
       <span> {{student.lastName}} </span>
       <br>
-      <span>{{student.jmbag}} <small>(JMBAG) </small></span>
+      <span>{{student.jmbag}} <small>{{'studentDetail.student_jmbag' | translate}} </small></span>
       <br>
-      <span> {{student.numberOfECTS}} <small>(ECTS)</small> </span>
+      <span> {{student.numberOfECTS}} <small>{{'studentDetail.student_ects' | translate}}</small> </span>
       <br>
-      <span *ngIf="student.tuitionShouldBePaid"> Student treba platiti školarinu. </span>
+      <span *ngIf="student.tuitionShouldBePaid"> {{'studentDetail.student_tuition_yes' | translate}} </span>
       <mat-list *ngIf="courses">
-        <span>Kolegiji na kojima je student upisan:</span>
+        <span>{{'studentDetail.student_courses' | translate}}</span>
         <mat-list-item *ngFor="let course of courses">
          {{course.name}}
         </mat-list-item>
@@ -31,7 +31,7 @@
     <br>
     <br>
     <button class="btn btn-back btn-5b icon-left"  routerLink="/students">
-      <span>Nazad</span>
+      <span>{{'studentDetail.button_back' | translate}}</span>
     </button>
    </mat-card-content>
   </mat-card>

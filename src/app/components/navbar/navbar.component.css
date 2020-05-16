@@ -13,6 +13,12 @@ a {
   font-size:2rem;
 }
 
+.language_button
+{
+  font-size: 1rem;
+  float:right;
+}
+
 a:hover, a:active{
   color: lightgray;
 }

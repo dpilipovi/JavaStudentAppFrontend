@@ -1,21 +1,27 @@
 <mat-toolbar color="primary"  data-aos="fade-up">
   <ul class="list-horizontal">
+    <li><button class="language_button" mat-button [matMenuTriggerFor]="menu">{{'language.language' | translate}}</button>
+      <mat-menu #menu="matMenu">
+        <button (click)="setLanguage('hr')" mat-menu-item>{{'language.croatian' | translate}}</button>
+        <button (click)="setLanguage('en')" mat-menu-item>{{'language.english' | translate}}</button>
+      </mat-menu>
+    </li>
     <div *ngIf="isUserLoggedIn()">
       <li class="left">
-        <a routerLink="/welcome">StudApp</a>
+        <a routerLink="/welcome">{{'navbar.title' | translate}}</a>
       </li>
       <li>
-        <a (click)="logout()">Odjava</a>
+        <a (click)="logout()">{{'navbar.logout' | translate}}</a>
       </li>
       <li>
-          <a routerLink="/courses">Courses</a>
+          <a routerLink="/courses">{{'navbar.courses' | translate}}</a>
       </li>
       <li>
-        <a routerLink="/students">Students</a>
+        <a routerLink="/students">{{'navbar.students' | translate}}</a>
       </li>
     </div>
       <li *ngIf="!isUserLoggedIn()" class="left">
-        <a routerLink="/login">StudApp</a>
+        <a routerLink="/login">{{'navbar.title' | translate}}</a>
       </li>
   </ul>
 </mat-toolbar>

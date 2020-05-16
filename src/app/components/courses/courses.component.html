@@ -1,15 +1,15 @@
 <div class="container" data-aos="fade-down">
   <mat-card>
-    <mat-card-title>Pretrazivanje predmeta</mat-card-title>
+    <mat-card-title>{{'courses.title' | translate}}</mat-card-title>
     <mat-divider></mat-divider>
     <br>
     <mat-form-field >
-      <mat-label>Ime</mat-label>
+      <mat-label>{{'courses.course_name' | translate}}</mat-label>
       <input matInput #name>
     </mat-form-field>
     <br>
     <br>
-    <button mat-raised-button color="primary" (click)="getCoursesByName(name)">Pretrazi</button>
+    <button mat-raised-button color="primary" (click)="getCoursesByName(name)">{{'courses.button_search' | translate}}</button>
     <br>
     <div *ngIf="courses" data-aos="fade-up">
     <mat-list>

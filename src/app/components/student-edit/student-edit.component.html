@@ -1,80 +1,80 @@
 <div class="container" data-aos="fade-down">
     <mat-card>
-        <mat-card-title>UREĐIVANJE STUDENTA</mat-card-title>
+        <mat-card-title>{{'studentEdit.title' | translate}}</mat-card-title>
         <mat-divider></mat-divider>
         <br>
         <mat-card-content>
             <form [formGroup]="studentEditForm">
                 <mat-form-field class="input-width">
-                    <mat-label>Ime</mat-label>
+                    <mat-label>{{'studentEdit.student_firstname' | translate}}</mat-label>
                     <input type="text" matInput required formControlName="firstName">
                 </mat-form-field>
                 <mat-error
                     *ngIf="studentEditForm.get('firstName').touched && studentEditForm.get('firstName').hasError('required')">
-                    Ime ne smije biti prazno!
+                    {{'studentEdit.student_firstname_error_required' | translate}}
                 </mat-error>
                 <br>
                 <mat-form-field class="input-width">
-                    <mat-label>Prezime</mat-label>
+                    <mat-label>{{'studentEdit.student_lastname' | translate}}</mat-label>
                     <input matInput #lastName required formControlName="lastName" >
                 </mat-form-field>
                 <mat-error
                     *ngIf="studentEditForm.get('lastName').touched && studentEditForm.get('lastName').hasError('required')">
-                    Prezime ne smije biti prazno!
+                    {{'studentEdit.student_lastname_error_required' | translate}}
                 </mat-error>
                 <br>
                 <mat-form-field class="input-width">
-                    <mat-label>JMBAG</mat-label>
+                    <mat-label>{{'studentEdit.student_jmbag' | translate}}</mat-label>
                     <input type="text" matInput readonly formControlName="jmbag" required>
                   </mat-form-field>
                   <mat-error  *ngIf="studentEditForm.get('jmbag').touched && studentEditForm.get('jmbag').hasError('required')">
-                    Potrebno je unijeti broj JMBAG!
+                    {{'studentEdit.student_jmbag_error_required' | translate}}
                   </mat-error>
                   <mat-error *ngIf="studentEditForm.get('jmbag').touched && studentEditForm.get('jmbag').hasError('maxLength') ">
-                    JMBAG mora imati 10 znamenaka!
+                    {{'studentEdit.student_jmbag_error_length' | translate}}
                   </mat-error>
                   <mat-error *ngIf="studentEditForm.get('jmbag').touched && studentEditForm.get('jmbag').hasError('minLength') ">
-                    JMBAG mora imati 10 znamenaka!
+                    {{'studentEdit.student_jmbag_error_length' | translate}}
                   </mat-error>
                   <mat-error *ngIf="studentEditForm.get('jmbag').touched && studentEditForm.get('jmbag').hasError('pattern')">
-                    JMBAG mora biti broj!
+                    {{'studentEdit.student_jmbag_error_number' | translate}}
                   </mat-error>
                 <br>
                 <mat-form-field class="input-width">
-                    <mat-label>ECTS</mat-label>
+                    <mat-label>{{'studentEdit.student_ects' | translate}}</mat-label>
                     <input matInput #numberOfECTS max="480" min="0" required formControlName="numberOfECTS" >
                 </mat-form-field>
                 <mat-error
                     *ngIf="studentEditForm.get('numberOfECTS').touched && studentEditForm.get('numberOfECTS').hasError('required')">
-                    Potrebno je unijeti broj ectsa
+                    {{'studentEdit.student_ects_error_required' | translate}}
                 </mat-error>
                 <mat-error
                     *ngIf="studentEditForm.get('numberOfECTS').touched && studentEditForm.get('numberOfECTS').hasError('min')">
-                    Ects mora biti veci ili jednak 0
+                    {{'studentEdit.student_ects_error_min' | translate}}
                 </mat-error>
                 <mat-error
                     *ngIf="studentEditForm.get('numberOfECTS').touched &&  studentEditForm.get('numberOfECTS').hasError('max')">
-                    Ects mora biti manji od 480
+                    {{'studentEdit.student_ects_error_max' | translate}}
                 </mat-error>
                 <br>
                 <mat-form-field class="input-width">
-                    <mat-label>Datum rođenja</mat-label>
+                    <mat-label>{{'studentEdit.student_dob' | translate}}</mat-label>
                     <input matInput [matDatepicker]="picker" #dateOfBirth required formControlName="dateOfBirth" >
                     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                     <mat-datepicker #picker></mat-datepicker>
                 </mat-form-field>
                 <mat-error
                     *ngIf="studentEditForm.get('dateOfBirth').touched &&  studentEditForm.get('dateOfBirth').hasError('required')">
-                    Potrebno je unijeti datum rođenja
+                    {{'studentEdit.student_dob_error_required' | translate}}
                 </mat-error>
                 <br>
                 <button class="btn2 btn-confirm btn-5a icon-check"
                     (click)="editStudent()">
-                    <span>Uredi</span>
+                    <span>{{'studentEdit.button_edit' | translate}}</span>
                 </button>
                 <button class="btn2 btn-cancel btn-5a icon-abort"
                 [routerLink]="['/student-detail',jmbag]">
-                    <span>Nazad</span>
+                    <span>{{'studentEdit.button_back' | translate}}</span>
                 </button>
             </form>
         </mat-card-content>

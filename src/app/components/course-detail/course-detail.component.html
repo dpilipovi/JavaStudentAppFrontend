@@ -1,15 +1,15 @@
 <div class="container" data-aos="fade-down">
   <mat-card *ngIf="course">
-      <mat-card-title>DETALJI</mat-card-title>
+      <mat-card-title>{{'courseDetail.title' | translate}}</mat-card-title>
       <mat-divider></mat-divider>
       <br>
       <mat-card-content>
-        <span>Naziv: </span> {{course.name}}
+        <span>{{'courseDetail.course_name' | translate}} </span> {{course.name}}
         <br>
-        <span>Broj ECTS bodova: </span> {{course.numberOfEcts}}
+        <span>{{'courseDetail.course_ects' | translate}} </span> {{course.numberOfEcts}}
         <br>
         <mat-list *ngIf="students">
-          <span>Studenti koji su upisani na kolegij:</span>
+          <span>{{'courseDetail.course_students' | translate}}</span>
           <mat-list-item *ngFor="let student of students">
             {{student.jmbag}}
           </mat-list-item>
@@ -20,7 +20,7 @@
     <br>
     <br>
     <button class="btn btn-back btn-5b icon-left"  routerLink="/courses">
-      <span>Nazad</span>
+      <span>{{'courseDetail.button_back' | translate}}</span>
     </button>
    </mat-card-content>
   </mat-card>
