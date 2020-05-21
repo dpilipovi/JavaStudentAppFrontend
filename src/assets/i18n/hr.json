@@ -1,0 +1,128 @@
+{
+  "language":
+  {
+    "croatian": "Hrvatski",
+    "english": "Engleski",
+    "italian": "Talijanski",
+    "language": "Jezik"
+  },
+
+  "login":
+  {
+    "title": "Prijava",
+    "username": "Korisničko ime",
+    "username_error": "Potrebno je unijeti korisničko ime",
+    "password": "Lozinka",
+    "password_error": "Potrebno je unijeti lozinku",
+    "login_button": "Prijava",
+    "login_fail": "Netočno korisničko ime ili lozinka!"
+  },
+
+  "navbar":
+  {
+    "title": "StudApp",
+    "logout": "Odjavi se",
+    "courses": "Kolegiji",
+    "students": "Studenti"
+  },
+
+  "students":
+  {
+    "title": "STUDENTI",
+    "no_students": "Nema studenata",
+    "delete_button": "Izbriši",
+    "student_ects": "ECTS",
+    "add_student_title": "DODAJ STUDENTA",
+    "add_student_button": "Dodaj",
+    "add_student_firstname": "Ime",
+    "add_student_firstname_error_required": "Potrebno je unijeti ime",
+    "add_student_lastname": "Prezime",
+    "add_student_lastname_error_required": "Potrebno je unijeti prezime",
+    "add_student_jmbag": "JMBAG",
+    "add_student_jmbag_error_number": "JMBAG mora biti broj!",
+    "add_student_jmbag_error_length": "JMBAG mora imati 10 znamenki!",
+    "add_student_jmbag_error_required": "Potrebno je unijeti JMBAG",
+    "add_student_ects": "ECTS",
+    "add_student_ects_error_min": "ECTS mora biti veći od nule!",
+    "add_student_ects_error_max": "ECTS ne smije biti veći od 420!",
+    "add_student_ects_error_required": "Potrebno je unijeti broj ECTS-a!",
+    "add_student_dob": "Datum rođenja",
+    "add_student_dob_error_required": "Potrebno je unijeti datum rođenja!"
+
+  },
+
+  "studentDetail":
+  {
+    "title": "DETALJI",
+    "button_edit": " Izmijeni",
+    "student_jmbag": "JMBAG",
+    "student_ects": "ECTS",
+    "student_tuition_yes": "Student treba platiti školarinu.",
+    "student_tuition_no": "Student ne treba platiti školarinu.",
+    "student_courses": "Kolegiji na kojima je student upisan: ",
+    "button_back": "Povratak"
+  },
+
+  "studentEdit":
+  {
+    "title": "UREĐIVANJE STUDENTA",
+    "student_firstname": "Ime",
+    "student_firstname_error_required": "Potrebno je unijeti ime",
+    "student_lastname": "Prezime",
+    "student_lastname_error_required": "Potrebno je unijeti prezime",
+    "student_jmbag": "JMBAG",
+    "student_jmbag_error_number": "JMBAG mora biti broj!",
+    "student_jmbag_error_length": "JMBAG mora imati 10 znamenki!",
+    "student_jmbag_error_required": "Potrebno je unijeti JMBAG",
+    "student_ects": "ECTS",
+    "student_ects_error_min": "ECTS mora biti veći ili jednak nuli!",
+    "student_ects_error_max": "JMBAG ne smije biti veći od 420!",
+    "student_ects_error_required": "Potrebno je unijeti broj ECTS-a!",
+    "student_dob": "Datum rođenja",
+    "student_dob_error_required": "Potrebno je unijeti datum rođenja!",
+    "button_edit": "Izmijeni",
+    "button_back": "Povratak"
+
+  },
+
+  "studij":
+  {
+    "title": "STUDIJ"
+  },
+
+  "welcome":
+  {
+    "title": "Student aplikacija",
+    "text": "Pritisnite gumb za pregled studenata ili koristite navigaciju",
+    "button_students": "Studenti"
+  },
+
+  "courses":
+  {
+    "title": "Pretrazivanje predmeta",
+    "course_name": "Naziv",
+    "button_search": "Pretrazi"
+  },
+
+  "courseDetail":
+  {
+    "title": "DETALJI",
+    "course_name": "Naziv:",
+    "course_ects": "Broj ECTS bodova:",
+    "course_students": "Studenti koji su upisani na kolegij:",
+    "button_back": "Povratak"
+  },
+
+  "forbidden":
+  {
+    "title": "403 Zabranjeno!",
+    "button_back": "Povratak na početnu stranicu"
+  },
+
+  "notFound":
+  {
+    "title": "404 Nije pronađeno!",
+    "button_back": "Povratak na početnu stranicu"
+  }
+
+}

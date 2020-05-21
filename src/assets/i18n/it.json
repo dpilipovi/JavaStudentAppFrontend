@@ -1,0 +1,127 @@
+{
+  "language":
+  {
+    "croatian": "Croata",
+    "english": "Inglese",
+    "italian": "Italiano",
+    "language": "Linguaggio"
+  },
+
+  "login":
+  {
+    "title": "Accesso",
+    "username": "Nome utente",
+    "username_error": "è richiesto il nome utente",
+    "password": "Parola d'ordine",
+    "password_error": "E 'richiesta la password",
+    "login_button": "Accesso",
+    "login_fail": "nome utente o password errati!"
+  },
+
+  "navbar":
+  {
+    "title": "StudApp",
+    "logout": "Disconnettersi",
+    "courses": "Corsi",
+    "students": "Studenti"
+  },
+
+  "students":
+  {
+    "title": "STUDENTI",
+    "no_students": "Nessuno studente",
+    "delete_button": "Elimina",
+    "student_ects": "ECTS",
+    "add_student_title": "Aggiungi studente",
+    "add_student_button": "Inserisci",
+    "add_student_firstname": "Nome di battesimo",
+    "add_student_firstname_error_required": "Nome richiesto!",
+    "add_student_lastname": "Cognome",
+    "add_student_lastname_error_required": "Cognome è richiesto!",
+    "add_student_jmbag": "JMBAG",
+    "add_student_jmbag_error_number": "JMBAG deve essere un numero!",
+    "add_student_jmbag_error_length": "JMBAG deve contenere 10 cifre!",
+    "add_student_jmbag_error_required": "È richiesto JMBAG!",
+    "add_student_ects": "ECTS",
+    "add_student_ects_error_min": "L'ECTS deve essere maggiore di 0!",
+    "add_student_ects_error_max": "L'ECTS non può essere maggiore di 420!",
+    "add_student_ects_error_required": "È richiesto l'ECTS!",
+    "add_student_dob": "Data di nascita",
+    "add_student_dob_error_required": "È richiesta la data di nascita"
+  },
+
+  "studentDetail":
+  {
+    "title": "Dettagli",
+    "button_edit": "Modificare",
+    "student_jmbag": "JMBAG",
+    "student_ects": "ECTS",
+    "student_tuition_yes": "Le tasse per studenti devono essere pagate.",
+    "student_tuition_no": "Lo studente non deve pagare le tasse scolastiche.",
+    "student_courses": "Corsi a cui è iscritto lo studente",
+    "button_back": "Indietro"
+  },
+
+  "studentEdit":
+  {
+    "title": "Modifica studente",
+    "student_firstname": "Nome di battesimo",
+    "student_firstname_error_required": "Nome richiesto!",
+    "student_lastname": "Cognome",
+    "student_lastname_error_required": "Cognome è richiesto!",
+    "student_jmbag": "JMBAG",
+    "student_jmbag_error_number": "JMBAG deve essere un numero!",
+    "student_jmbag_error_length": "JMBAG deve contenere 10 cifre!",
+    "student_jmbag_error_required": "È richiesto JMBAG!",
+    "student_ects": "ECTS",
+    "student_ects_error_min": "L'ECTS deve essere maggiore di 0!",
+    "student_ects_error_max": "L'ECTS non può essere maggiore di 420!",
+    "student_ects_error_required": "È richiesto l'ECTS!",
+    "student_dob": "Data di nascita",
+    "student_dob_error_required": "È richiesta la data di nascita",
+    "button_edit": "Modificare",
+    "button_back": "Indietro"
+
+  },
+
+  "studij":
+  {
+    "title": "Studia"
+  },
+
+  "welcome":
+  {
+    "title": "Applicazione per studenti",
+    "text": "Premi il pulsante per accedere all'elenco degli studenti o utilizzare la barra di navigazione",
+    "button_students": "Studenti"
+  },
+
+  "courses":
+  {
+    "title": "Ricerca del corso",
+    "course_name": "Nome",
+    "button_search": "Ricerca"
+  },
+
+  "courseDetail":
+  {
+    "title": "Dettagli",
+    "course_name": "Nome:",
+    "course_ects": "Numero di ect:",
+    "course_students": "Studenti iscritti a questo corso:",
+    "button_back": "Indietro"
+  },
+
+  "forbidden":
+  {
+    "title": "403 Vietato!",
+    "button_back": "Torna alla prima pagina"
+  },
+
+  "notFound":
+  {
+    "title": "404 Non trovato!",
+    "button_back": "Torna alla prima pagina"
+  }
+
+}

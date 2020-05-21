@@ -21,7 +21,7 @@
           {{'login.password_error' | translate}}
         </mat-error >
         <br>
-        <button mat-raised-button color="primary" (click)="login()"[disabled]="!loginForm.valid"type="submit">Prijava </button>
+        <button mat-raised-button color="primary" (click)="login()"[disabled]="!loginForm.valid"type="submit">{{'login.login_button' | translate}} </button>
         <br>
       </form>
         <mat-error *ngIf="loginFailed">

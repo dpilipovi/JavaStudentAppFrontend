@@ -1,0 +1,127 @@
+{
+  "language":
+  {
+    "croatian": "Croatian",
+    "english": "English",
+    "italian": "Italiano",
+    "language": "Language"
+  },
+
+  "login":
+  {
+    "title": "Login",
+    "username": "Username",
+    "username_error": "Username is required",
+    "password": "Password",
+    "password_error": "Password is required",
+    "login_button": "Login",
+    "login_fail": "Wrong username or password!"
+  },
+
+  "navbar":
+  {
+    "title": "StudApp",
+    "logout": "Logout",
+    "courses": "Courses",
+    "students": "Students"
+  },
+
+  "students":
+  {
+    "title": "STUDENTS",
+    "no_students": "No students",
+    "delete_button": "Delete",
+    "student_ects": "ECTS",
+    "add_student_title": "ADD STUDENT",
+    "add_student_button": "Add",
+    "add_student_firstname": "Firstname",
+    "add_student_firstname_error_required": "Firstname is required!",
+    "add_student_lastname": "Lastname",
+    "add_student_lastname_error_required": "Lastname is required!",
+    "add_student_jmbag": "JMBAG",
+    "add_student_jmbag_error_number": "JMBAG has to be a number!",
+    "add_student_jmbag_error_length": "JMBAG has to have 10 digits!",
+    "add_student_jmbag_error_required": "JMBAG is required!",
+    "add_student_ects": "ECTS",
+    "add_student_ects_error_min": "ECTS has to be greater than 0!",
+    "add_student_ects_error_max": "ECTS can`t be greater than 420!",
+    "add_student_ects_error_required": "ECTS is required!",
+    "add_student_dob": "Date of birth",
+    "add_student_dob_error_required": "Date of birth is required"
+  },
+
+  "studentDetail":
+  {
+    "title": "DETAILS",
+    "button_edit": " Edit",
+    "student_jmbag": "JMBAG",
+    "student_ects": "ECTS",
+    "student_tuition_yes": "Student has to pay tuition",
+    "student_tuition_no": "Student doesn`t have to pay tuition.",
+    "student_courses": "Courses in which the student is enrolled",
+    "button_back": "Back"
+  },
+
+  "studentEdit":
+  {
+    "title": "STUDENT EDIT",
+    "student_firstname": "Firstname",
+    "student_firstname_error_required": "Firstname is required!",
+    "student_lastname": "Lastname",
+    "student_lastname_error_required": "Lastname is required!",
+    "student_jmbag": "JMBAG",
+    "student_jmbag_error_number": "JMBAG has to be a number!",
+    "student_jmbag_error_length": "JMBAG has to have 10 digits!",
+    "student_jmbag_error_required": "JMBAG is required!",
+    "student_ects": "ECTS",
+    "student_ects_error_min": "ECTS has to be greater than or equal to 0!",
+    "student_ects_error_max": "ECTS can`t be greater than 420!",
+    "student_ects_error_required": "ECTS is required!",
+    "student_dob": "Date of birth",
+    "student_dob_error_required": "Date of birth is required",
+    "button_edit": "Edit",
+    "button_back": "Back"
+
+  },
+
+  "studij":
+  {
+    "title": "College"
+  },
+
+  "welcome":
+  {
+    "title": "Student application",
+    "text": "Press button to navigate to students list or use the navigation bar",
+    "button_students": "Students"
+  },
+
+  "courses":
+  {
+    "title": "Course search",
+    "course_name": "Name",
+    "button_search": "Search"
+  },
+
+  "courseDetail":
+  {
+    "title": "DEATILS",
+    "course_name": "Name:",
+    "course_ects": "Number of ECTS:",
+    "course_students": "Students enrolled in this course:",
+    "button_back": "Back"
+  },
+
+  "forbidden":
+  {
+    "title": "403 Forbidden!",
+    "button_back": "Back to front page"
+  },
+
+  "notFound":
+  {
+    "title": "404 Not found!",
+    "button_back": "Back to front page"
+  }
+
+}

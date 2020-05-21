@@ -4,6 +4,7 @@
       <mat-menu #menu="matMenu">
         <button (click)="setLanguage('hr')" mat-menu-item>{{'language.croatian' | translate}}</button>
         <button (click)="setLanguage('en')" mat-menu-item>{{'language.english' | translate}}</button>
+        <button (click)="setLanguage('it')" mat-menu-item>{{'language.italian' | translate}}</button>
       </mat-menu>
     </li>
     <div *ngIf="isUserLoggedIn()">
