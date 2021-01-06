@@ -26,7 +26,7 @@
     "@ngx-translate/http-loader": "^4.0.0",
     "@types/axios": "^0.14.0",
     "aos": "^2.3.4",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "axios-observable": "^1.1.3",
     "moment": "^2.24.0",
     "rxjs": "^6.5.5",
